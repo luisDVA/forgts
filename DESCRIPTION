@@ -1,0 +1,19 @@
+Package: forgts
+Title: Formatted Spreadsheets to gts
+Version: 0.0.0.9000
+Authors@R: 
+    person("Luis D.", "Verde Arregoitia", , "luis@liomys.mx", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-9520-6543"))
+Description: Reads data plus formatting from a spreadsheet file and creates a gt object with the same data and formatting.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2.9000
+Imports: 
+    dplyr,
+    gt,
+    readxl,
+    tidyr
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

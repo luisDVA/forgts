@@ -1,0 +1,65 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# forgts <img src="man/figures/logo.png" align="right" height="138" alt="" />
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+forgts reads a spreadsheet and its formatting information to produce gt tables with the same cell and text formatting as the input file.
+
+Text and cell formats supported include:
+
+- font face (bold, italic)
+- font style (color, underline, strikethrough)
+- cell fill
+- cell borders (color and width)
+
+Note that formatting in the headers is ignored intentionally in this package, and that the cell and text formatting is added iteratively on top of gt defaults.
+
+## Installation
+
+Install the development version of forgts from GitHub:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("luisDVA/forgts")
+```
+
+## Using forgts
+
+The `rodentsheet.xlsx` file that comes with this package looks like this:
+
+```{r, echo=FALSE, eval=TRUE, fig.align='center', out.width="70%"}
+knitr::include_graphics("man/figures/spsheetog.png", error = FALSE)
+```
+
+<br/>
+
+The function `forgts` will read the file and produce a gt object.
+
+```{r example}
+library(forgts)
+### 
+example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+forgts(example_spreadsheet)
+
+```
+
+<br/>
+
+`forgts()` may be used in RMarkdown and Quarto documents, and the resulting gt tables may be exported with `gt::gtsave()`.
+
+
