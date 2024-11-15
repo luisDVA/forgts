@@ -1,4 +1,15 @@
+title: forgts
 url: https://luisdva.github.io/forgts/
+
 template:
   bootstrap: 5
+  light-switch: true
+  bslib:
+    primary: "#202c56"
+    border-radius: 0.5rem
+    btn-border-radius: 0.25rem
+    danger: "#A6081A"
+    base_font:
+     google: {family: "Work Sans", wght: [400, 500, 700], ital: [0, 1]}
+    code_font: {google: "Red Hat Mono"}
 
