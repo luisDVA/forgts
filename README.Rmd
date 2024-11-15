@@ -48,14 +48,22 @@ knitr::include_graphics("man/figures/spsheetog.png", error = FALSE)
 
 <br/>
 
-The function `forgts` will read the file and produce a gt object.
+The function `forgts` will read the file and produce a gt object (shown here as an image).
 
-```{r example}
+```{r example, echo=TRUE, eval=FALSE}
 library(forgts)
 ### 
 example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+
 forgts(example_spreadsheet)
 
+```
+
+<br/>
+
+
+```{r, echo=FALSE, eval=TRUE, fig.align='center', out.width="70%"}
+knitr::include_graphics("man/figures/rdout.png")
 ```
 
 <br/>
