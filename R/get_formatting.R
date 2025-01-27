@@ -37,41 +37,29 @@ get_formatting <- function(xlfilepath, sheet = NULL) {
 
   format_defs <- tidyxl::xlsx_formats(xlfilepath)
 
-  bold <- format_defs$local$font$bold
-  italic <- format_defs$local$font$italic
-  underlined <- format_defs$local$font$underline
-  hl_color <- format_defs$local$fill$patternFill$fgColor$rgb
-  strikethrough <- format_defs$local$font$strike
-  text_clr <- format_defs$local$font$color$rgb
-  border_top_style <- format_defs$local$border$top$style
-  border_top_clr <- format_defs$local$border$top$color$rgb
-  border_right_style <- format_defs$local$border$right$style
-  border_right_clr <- format_defs$local$border$right$color$rgb
-  border_bottom_style <- format_defs$local$border$bottom$style
-  border_bottom_clr <- format_defs$local$border$bottom$color$rgb
-  border_left_style <- format_defs$local$border$left$style
-  border_left_clr <- format_defs$local$border$left$color$rgb
-
-  format_opts <- tibble::lst(
-    bold, hl_color, italic,
-    strikethrough, text_clr, underlined, border_top_clr,
-    border_top_style, border_right_clr, border_right_style,
-    border_bottom_clr, border_bottom_style, border_left_clr,
-    border_left_style
+  format_opts <- list(
+    bold = format_defs$local$font$bold,
+    italic = format_defs$local$font$italic,
+    underlined = format_defs$local$font$underline,
+    hl_color = format_defs$local$fill$patternFill$fgColor$rgb,
+    strikethrough = format_defs$local$font$strike,
+    text_clr = format_defs$local$font$color$rgb,
+    border_top_style = format_defs$local$border$top$style,
+    border_top_clr = format_defs$local$border$top$color$rgb,
+    border_right_style = format_defs$local$border$right$style,
+    border_right_clr = format_defs$local$border$right$color$rgb,
+    border_bottom_style = format_defs$local$border$bottom$style,
+    border_bottom_clr = format_defs$local$border$bottom$color$rgb,
+    border_left_style = format_defs$local$border$left$style,
+    border_left_clr = format_defs$local$border$left$color$rgb
   )
+
   formatting_indicators <- dplyr::bind_cols(lapply(
     format_opts,
     function(x) x[m_formatting$local_format_id]
   ))
 
   format_joined <- dplyr::bind_cols(m_formatting, formatting_indicators)
-
-
-  cols_spsheet <- match(
-    names(spsheet),
-    format_joined$character
-  )
-
 
   # format for target variable
   target_vars <- vector("list", ncol(spsheet))
