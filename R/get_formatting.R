@@ -8,6 +8,7 @@
 #'   if left unspecified.
 #' @return A data frame or list with parsed formatting information.
 #'
+#' @importFrom rlang .data
 #' @export
 #'
 get_formatting <- function(xlfilepath, sheet = NULL) {
@@ -23,8 +24,8 @@ get_formatting <- function(xlfilepath, sheet = NULL) {
   m_formatting <- tidyxl::xlsx_cells(xlfilepath, sheets = sheet)
 
   m_formatting <-
-    dplyr::ungroup(tidyr::complete(dplyr::group_by(m_formatting, col),
-      row = tidyr::full_seq(row, 1)
+    dplyr::ungroup(tidyr::complete(dplyr::group_by(m_formatting, .data$col),
+                                   row = tidyr::full_seq(.data$row, 1)
     ))
 
   if (nrow(spsheet) != max(m_formatting$row) - 1) {
@@ -81,18 +82,21 @@ get_formatting <- function(xlfilepath, sheet = NULL) {
 #'
 target_var_fmt <- function(format_joined, spsheet, col_name) {
   col_ind <- which(names(spsheet) == col_name)
-  orig_format <- dplyr::filter(format_joined, row >= 2 & col == col_ind)
-  orig_format <- dplyr::select(orig_format, bold:border_left_style)
+  orig_format <- dplyr::filter(format_joined, .data$row >= 2 & .data$col == col_ind)
+  orig_format <- dplyr::select(orig_format, .data$bold:.data$border_left_style)
 
   orig_format <-
-    mutate(orig_format,
-      target_var := names(spsheet[col_ind]),
-      .before = 1
+    dplyr::mutate(orig_format,
+                  target_var = names(spsheet[col_ind]),
+                  .before = 1
     )
   orig_format <- tibble::rowid_to_column(orig_format)
-  orig_format <- mutate(orig_format, across(everything(), as.character))
+  orig_format <- dplyr::mutate(orig_format, dplyr::across(dplyr::everything(), as.character))
 
   tidyr::pivot_longer(orig_format, -c(1, 2),
-    names_to = "format", values_to = "val"
+                      names_to = "format", values_to = "val"
   )
 }
+
+# Declare global variables
+utils::globalVariables(c("row", "col", "bold", "border_left_style"))
