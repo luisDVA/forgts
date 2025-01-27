@@ -19,3 +19,8 @@ A data frame or list with parsed formatting information.
 \description{
 Extracts formatting information from a spreadsheet.
 }
+\examples{
+\dontrun{
+get_formatting("yourpath/yourspreadsheet.xlsx")
+}
+}

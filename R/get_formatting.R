@@ -9,6 +9,10 @@
 #' @return A data frame or list with parsed formatting information.
 #'
 #' @importFrom rlang .data
+#' @examples
+#' \dontrun{
+#' get_formatting("yourpath/yourspreadsheet.xlsx")
+#' }
 #' @export
 #'
 get_formatting <- function(xlfilepath, sheet = NULL) {
