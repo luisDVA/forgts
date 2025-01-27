@@ -15,10 +15,10 @@
 #' format_long <- get_formatting("yourpath/yourspreadsheet.xlsx")
 #' translate_defs(format_long)
 #' }
-translate_defs <- function(format_long){
+translate_defs <- function(format_long) {
   # match styling arguments
   format_long_stl <- dplyr::mutate(format_long,
-                                   styling_arg = dplyr::case_when(
+styling_arg = dplyr::case_when(
                                      format == "bold" ~ "weight",
                                      format == "italic" ~ "style",
                                      format == "underlined" ~ "decorate",

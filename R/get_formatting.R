@@ -10,21 +10,21 @@
 #'
 #' @export
 #'
-get_formatting  <- function(xlfilepath,sheet=NULL) {
+get_formatting  <- function(xlfilepath, sheet = NULL) {
   if (is.null(sheet)) {
     sheet <- 1L
   }
-  spsheet <- readxl::read_excel(xlfilepath,sheet=sheet)
+  spsheet <- readxl::read_excel(xlfilepath, sheet = sheet)
 
   if (any(grepl("^\\.\\.\\.", names(spsheet)))) {
     stop("Check the spreadsheet for empty values in the header row")
   }
 
-  m_formatting <- tidyxl::xlsx_cells(xlfilepath,sheets = sheet)
+  m_formatting <- tidyxl::xlsx_cells(xlfilepath, sheets = sheet)
 
   m_formatting <-
     dplyr::ungroup(tidyr::complete(dplyr::group_by(m_formatting, col),
-                                   row = tidyr::full_seq(row, 1)
+      row = tidyr::full_seq(row, 1)
     ))
 
   if (nrow(spsheet) != max(m_formatting$row) - 1) {
@@ -54,7 +54,7 @@ get_formatting  <- function(xlfilepath,sheet=NULL) {
 
   format_opts <- tibble::lst(
     bold, hl_color, italic,
-    strikethrough, text_clr, underlined,border_top_clr,
+    strikethrough, text_clr, underlined, border_top_clr,
     border_top_style, border_right_clr, border_right_style,
     border_bottom_clr, border_bottom_style, border_left_clr,
     border_left_style
@@ -98,9 +98,10 @@ target_var_fmt <- function(format_joined, spsheet, col_name) {
 
   orig_format <-
     mutate(orig_format,
-           target_var := names(spsheet[col_ind]),.before = 1)
+           target_var := names(spsheet[col_ind]), .before = 1)
   orig_format <- tibble::rowid_to_column(orig_format)
-  orig_format <- mutate(orig_format,across(everything(),as.character))
+  orig_format <- mutate(orig_format, across(everything(), as.character))
 
-  tidyr::pivot_longer(orig_format, -c(1,2),names_to = "format",values_to = "val")
+  tidyr::pivot_longer(orig_format, -c(1, 2),
+                      names_to = "format",values_to = "val")
 }

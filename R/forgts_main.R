@@ -16,11 +16,11 @@
 #' \dontrun{
 #' forgts("yourpath/yourspreadsheet.xlsx")
 #' }
-forgts <- function(file,sheet=NULL) {
+forgts <- function(file, sheet = NULL) {
   if (is.null(sheet)) {
     sheet <- 1L
   }
-  sprdsht_data <- readxl::read_excel(file,sheet=sheet)
+  sprdsht_data <- readxl::read_excel(file, sheet = sheet)
   format_long <- get_formatting(file)
   formatRdy <- translate_defs(format_long)
   gt_table <- gt::gt(sprdsht_data)

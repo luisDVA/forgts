@@ -23,7 +23,7 @@ apply_styling <- function(gt_object, formatRdy) {
   # list for each cell's borders
   border_styles <- list()
 
-  for (i in 1:nrow(formatRdy)) {
+  for (i in 1:seq_len(formatRdy)) {
     row <- formatRdy[i, ]
 
     # Text styling (bold, italic, underline, strikethrough)
