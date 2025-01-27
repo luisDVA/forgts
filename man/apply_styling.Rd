@@ -7,9 +7,9 @@
 apply_styling(gt_object, formatRdy)
 }
 \arguments{
-\item{formatRdy}{A data frame with formatting definitions.}
+\item{gt_object}{A gt object.}
 
-\item{gt_table}{A gt object.}
+\item{formatRdy}{A data frame with formatting definitions.}
 }
 \value{
 A great table!

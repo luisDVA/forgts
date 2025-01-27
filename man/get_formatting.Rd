@@ -7,11 +7,11 @@
 get_formatting(xlfilepath, sheet = NULL)
 }
 \arguments{
+\item{xlfilepath}{A character string specifying the path to the spreadsheet.}
+
 \item{sheet}{A character string with the name of a sheet within a workbook,
 or an integer with the position of the sheet. Defaults to the first sheet
 if left unspecified.}
-
-\item{file}{A character string specifying the path to the spreadsheet.}
 }
 \value{
 A data frame or list with parsed formatting information.

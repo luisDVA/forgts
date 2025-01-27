@@ -2,7 +2,7 @@
 #'
 #' Applies formatting to a gt table based on information extracted from the spreadsheet file.
 #'
-#' @param gt_table A gt object.
+#' @param gt_object A gt object.
 #' @param formatRdy A data frame with formatting definitions.
 #'
 #' @return A great table!

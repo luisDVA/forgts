@@ -2,7 +2,7 @@
 #'
 #' Extracts formatting information from a spreadsheet.
 #'
-#' @param file A character string specifying the path to the spreadsheet.
+#' @param xlfilepath A character string specifying the path to the spreadsheet.
 #' @param sheet A character string with the name of a sheet within a workbook,
 #'   or an integer with the position of the sheet. Defaults to the first sheet
 #'   if left unspecified.
