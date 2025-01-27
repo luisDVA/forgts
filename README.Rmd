@@ -52,11 +52,10 @@ The function `forgts` will read the file and produce a gt object (shown here as 
 
 ```{r example, echo=TRUE, eval=FALSE}
 library(forgts)
-### 
+###
 example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
 
 forgts(example_spreadsheet)
-
 ```
 
 <br/>

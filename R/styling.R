@@ -29,10 +29,11 @@ apply_styling <- function(gt_object, formatRdy) {
     # Text styling (bold, italic, underline, strikethrough)
     if (row$helper == "cell_text" && !is.na(row$arg_value)) {
       style_fn <- switch(row$styling_arg,
-                         "weight" = function(x) gt::cell_text(weight = x),
-                         "style" = function(x) gt::cell_text(style = x),
-                         "decorate" = function(x) gt::cell_text(decorate = x),
-                         "color" = function(x) gt::cell_text(color = x))
+        "weight" = function(x) gt::cell_text(weight = x),
+        "style" = function(x) gt::cell_text(style = x),
+        "decorate" = function(x) gt::cell_text(decorate = x),
+        "color" = function(x) gt::cell_text(color = x)
+      )
 
       gt_object <-
         gt::tab_style(gt_object,
@@ -73,16 +74,18 @@ apply_styling <- function(gt_object, formatRdy) {
         }
       } else if (row$border_property == "sides") {
         side <- switch(row$border_side,
-                       "left" = "left",
-                       "right" = "right",
-                       "top" = "top",
-                       "bottom" = "bottom",
-                       "all")
+          "left" = "left",
+          "right" = "right",
+          "top" = "top",
+          "bottom" = "bottom",
+          "all"
+        )
         weight <- switch(row$arg_value,
-                         "thin" = gt::px(1),
-                         "medium" = gt::px(2),
-                         "thick" = gt::px(3),
-                         gt::px(1))
+          "thin" = gt::px(1),
+          "medium" = gt::px(2),
+          "thick" = gt::px(3),
+          gt::px(1)
+        )
         if (side == "all") {
           for (s in c("top", "right", "bottom", "left")) {
             border_styles[[cell_key]][[s]]$weight <- weight
