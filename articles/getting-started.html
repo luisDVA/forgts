@@ -96,12 +96,11 @@ number.</p>
 </ul>
 <p>Please note that formatting in the headers is ignored intentionally
 in this package, and that the cell and text formatting is added
-iteratively on top of gt defaults.</p>
-<p>The gt object produced can be styled further or exported.</p>
+iteratively on top of gt defaults. The gt object produced can be styled
+further or exported.</p>
 <p>forgts ships with an example spreadsheet file
 (<code>rodentsheet.xlsx</code>) that looks like this:</p>
-<p>&lt;img src=“img/spsheetog.png” alt=“Screenshot of the
-colorful”rodentsheet.xlsx” example spreadsheet.” width=“70%” /&gt;</p>
+<p><img src="img%2Fspsheetog.png" alt="Screenshot of the colorful rodentsheet.xlsfile" width="70%"></p>
 <p>The function <code><a href="../reference/forgts.html">forgts()</a></code> will read the file and produce a
 gt object.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
@@ -620,6 +619,8 @@ gt object.</p>
 </tbody>
 </table>
 </div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># note that the resulting gt is responsive to dark and light modes on a browser</span></span></code></pre></div>
 <p><code><a href="../reference/forgts.html">forgts()</a></code> may be used in RMarkdown and Quarto documents,
 and the resulting gt tables may be exported with
 <code><a href="https://gt.rstudio.com/reference/gtsave.html" class="external-link">gt::gtsave()</a></code>.</p>
