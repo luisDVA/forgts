@@ -3,7 +3,7 @@
 \docType{package}
 \name{forgts-package}
 \alias{forgts-package}
-\title{forgts: Formatted Spreadsheets to gts}
+\title{forgts: Convert Formatted Spreadsheets to Presentation-Ready Display Tables}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 

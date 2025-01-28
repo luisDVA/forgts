@@ -1,6 +1,6 @@
 Package: forgts
-Title: Formatted Spreadsheets to gts
-Version: 0.0.0.9000
+Title: Convert Formatted Spreadsheets to Presentation-Ready Display Tables
+Version: 0.0.1
 Authors@R: 
     person("Luis D.", "Verde Arregoitia", , "luis@liomys.mx", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-9520-6543"))
