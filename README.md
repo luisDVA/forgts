@@ -43,7 +43,7 @@ here as an image).
 
 ``` r
 library(forgts)
-### 
+###
 example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
 
 forgts(example_spreadsheet)

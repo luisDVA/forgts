@@ -1,0 +1,59 @@
+---
+title: "Getting started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+forgts leverages [readxl][readxl], [tidyxl][tidyxl], and [unheadr][unheadr] to read a spreadsheet and its formatting information and produce a gt object with the same cell and text formatting as the input file.
+
+The main function in this package is `forgts::forgts()`, which simply takes path to an xlsx file and an optional sheet number. 
+
+The text and cell formats currently supported include:
+
+- font face (bold, italic)
+- font style (color, underline, strikethrough)
+- cell fill
+- cell borders (color and width)
+
+Please note that formatting in the headers is ignored intentionally in this package, and that the cell and text formatting is added iteratively on top of gt defaults.
+
+The gt object produced can be styled further or exported.
+
+
+forgts ships with an example spreadsheet file (`rodentsheet.xlsx`) that looks like this:
+
+```{r out.width = '70%', echo = FALSE}
+#| fig-alt: Screenshot of the colorful "rodentsheet.xlsx" example spreadsheet.
+knitr::include_graphics("img/spsheetog.png")
+```                                                     
+
+
+The function `forgts()` will read the file and produce a gt object.
+
+```{r example, echo=TRUE, eval=TRUE}
+library(forgts)
+###
+example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+
+forgts(example_spreadsheet)
+```
+
+
+`forgts()` may be used in RMarkdown and Quarto documents, and the resulting gt tables may be exported with `gt::gtsave()`.
+
+
+ 
+[readxl]: https://readxl.tidyverse.org/
+[tidyxl]: https://nacnudus.github.io/tidyxl/
+[unheadr]: https://unheadr.liomys.mx/
