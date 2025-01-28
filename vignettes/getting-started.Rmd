@@ -26,15 +26,13 @@ The text and cell formats currently supported include:
 - cell fill
 - cell borders (color and width)
 
-Please note that formatting in the headers is ignored intentionally in this package, and that the cell and text formatting is added iteratively on top of gt defaults.
-
-The gt object produced can be styled further or exported.
+Please note that formatting in the headers is ignored intentionally in this package, and that the cell and text formatting is added iteratively on top of gt defaults. The gt object produced can be styled further or exported.
 
 
 forgts ships with an example spreadsheet file (`rodentsheet.xlsx`) that looks like this:
 
-```{r out.width = '70%', echo = FALSE}
-#| fig-alt: Screenshot of the colorful "rodentsheet.xlsx" example spreadsheet.
+```{r out.width = '70%', echo = FALSE, fig.alt="Screenshot of the colorful rodentsheet.xlsfile"}
+
 knitr::include_graphics("img/spsheetog.png")
 ```                                                     
 
@@ -47,6 +45,7 @@ library(forgts)
 example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
 
 forgts(example_spreadsheet)
+# note that the resulting gt is responsive to dark and light modes on a browser
 ```
 
 
