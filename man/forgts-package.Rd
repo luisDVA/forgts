@@ -7,7 +7,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Reads data plus formatting from a spreadsheet file and creates a gt object with the same data and formatting.
+Reads cell contents plus formatting from a spreadsheet file and creates an editable 'gt' object with the same data and formatting. Supports the most commonly-used cell and text styles including colors, fills, font weights and decorations, and borders.
 }
 \seealso{
 Useful links:

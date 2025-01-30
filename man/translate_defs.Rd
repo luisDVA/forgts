@@ -16,8 +16,8 @@ A data frame with formatting information compatible with gt.
 Convert formatting information into arguments that can be used by \code{gt}.
 }
 \examples{
-\dontrun{
-format_long <- get_formatting("yourpath/yourspreadsheet.xlsx")
+example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+format_long <- get_formatting(example_spreadsheet)
 translate_defs(format_long)
-}
+
 }

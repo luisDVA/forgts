@@ -10,13 +10,12 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' sprdsht_data <- read_excel("yourpath/yourspreadsheet.xlsx")
+#' example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+#' sprdsht_data <- readxl::read_excel(example_spreadsheet)
 #' gt_table <- gt::gt(sprdsht_data)
-#' format_long <- get_formatting("yourpath/yourspreadsheet.xlsx")
+#' format_long <- get_formatting(example_spreadsheet)
 #' format_ready <- translate_defs(format_long)
 #' apply_styling(gt_table, format_ready)
-#' }
 #'
 #' @importFrom gt gt
 apply_styling <- function(gt_object, formatRdy) {

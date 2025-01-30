@@ -6,3 +6,4 @@
 .quarto
 docs
 forgts.Rproj
+inst/doc

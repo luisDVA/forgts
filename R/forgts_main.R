@@ -13,9 +13,9 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
-#' forgts("yourpath/yourspreadsheet.xlsx")
-#' }
+#' example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+#' forgts(example_spreadsheet)
+#'
 forgts <- function(file, sheet = NULL) {
   if (is.null(sheet)) {
     sheet <- 1L

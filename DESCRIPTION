@@ -4,7 +4,7 @@ Version: 0.0.1
 Authors@R: 
     person("Luis D.", "Verde Arregoitia", , "luis@liomys.mx", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-9520-6543"))
-Description: Reads data plus formatting from a spreadsheet file and creates a gt object with the same data and formatting.
+Description: Reads cell contents plus formatting from a spreadsheet file and creates an editable 'gt' object with the same data and formatting. Supports the most commonly-used cell and text styles including colors, fills, font weights and decorations, and borders.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

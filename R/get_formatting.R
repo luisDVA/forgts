@@ -10,9 +10,9 @@
 #'
 #' @importFrom rlang .data
 #' @examples
-#' \dontrun{
-#' get_formatting("yourpath/yourspreadsheet.xlsx")
-#' }
+#' example_file <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+#' get_formatting(example_file)
+#'
 #' @export
 #'
 get_formatting <- function(xlfilepath, sheet = NULL) {

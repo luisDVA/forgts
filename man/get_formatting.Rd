@@ -20,7 +20,7 @@ A data frame or list with parsed formatting information.
 Extracts formatting information from a spreadsheet.
 }
 \examples{
-\dontrun{
-get_formatting("yourpath/yourspreadsheet.xlsx")
-}
+example_file <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+get_formatting(example_file)
+
 }

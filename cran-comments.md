@@ -1,9 +1,7 @@
 ## R CMD check results
 
-0 errors | 0 warnings | 2 notes
+0 errors | 0 warnings | 0 notes
 Winbuilder: OK
-
-notes pertain to new submission
 
 ## Rhub v2 checks: ALL OK
 Test environments:
@@ -11,4 +9,8 @@ Test environments:
 * macOS Ventura 13.7.2 
 * Windows Server 2022 x64 (build 20348)
 
-* This is a new release.
+## Resubmission notes
+
+* More descriptive text in 'Description' field
+* Package names quoted in Title field
+* All exported functions now with working examples that run OK

@@ -21,7 +21,7 @@ Wrapper. Reads a spreadsheet file including most formatting information and crea
 formatted gt table with the same data and formatting.
 }
 \examples{
-\dontrun{
-forgts("yourpath/yourspreadsheet.xlsx")
-}
+example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+forgts(example_spreadsheet)
+
 }

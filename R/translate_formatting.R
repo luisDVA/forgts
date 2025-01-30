@@ -12,10 +12,10 @@
 #' @importFrom dplyr case_when if_else mutate
 #'
 #' @examples
-#' \dontrun{
-#' format_long <- get_formatting("yourpath/yourspreadsheet.xlsx")
+#' example_spreadsheet <- system.file("extdata/rodentsheet.xlsx", package = "forgts")
+#' format_long <- get_formatting(example_spreadsheet)
 #' translate_defs(format_long)
-#' }
+#'
 translate_defs <- function(format_long) {
   # match styling arguments
   format_long_stl <- dplyr::mutate(format_long,
