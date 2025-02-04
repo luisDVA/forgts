@@ -4,6 +4,13 @@
 # forgts <img src="man/figures/logo.png" align="right" height="138" alt="" />
 
 <!-- badges: start -->
+
+[![r-universe status
+badge](https://luisdva.r-universe.dev/badges/forgts)](https://luisdva.r-universe.dev/forgts)
+[![](https://www.r-pkg.org/badges/version/forgts?color=orange)](https://cran.r-project.org/package=forgts)
+[![CRAN
+checks](https://badges.cranchecks.info/summary/forgts.svg)](https://cran.r-project.org/web/checks/check_results_forgts.html)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/forgts?color=blue)](https://cran.r-project.org/package=forgts)
 <!-- badges: end -->
 
 forgts reads a spreadsheet and its formatting information to produce gt
