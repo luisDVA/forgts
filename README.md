@@ -22,6 +22,18 @@ top of gt defaults.
 
 ## Installation
 
+Install from CRAN:
+
+``` r
+install.packages("forgts")
+```
+
+Install from R-universe:
+
+``` r
+install.packages("forgts", repos = "https://luisdva.r-universe.dev") 
+```
+
 Install the development version of forgts from GitHub:
 
 ``` r
